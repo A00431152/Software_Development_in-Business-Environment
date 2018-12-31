@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-24T16:55:06</date>
+  <millis>1537818906335</millis>
+  <sequence>0</sequence>
+  <level>SEVERE</level>
+  <class>DirWalker_f</class>
+  <method>csvParser</method>
+  <thread>1</thread>
+  <message>7</message>
+</record>
+<record>
+  <date>2018-09-24T16:55:06</date>
+  <millis>1537818906449</millis>
+  <sequence>1</sequence>
+  <level>SEVERE</level>
+  <class>DirWalker_f</class>
+  <method>csvParser</method>
+  <thread>1</thread>
+  <message>1</message>
+</record>
+<record>
+  <date>2018-09-24T16:55:06</date>
+  <millis>1537818906452</millis>
+  <sequence>2</sequence>
+  <level>SEVERE</level>
+  <class>DirWalker_f</class>
+  <method>csvParser</method>
+  <thread>1</thread>
+  <message>1</message>
+</record>
+<record>
+  <date>2018-09-24T16:55:06</date>
+  <millis>1537818906531</millis>
+  <sequence>3</sequence>
+  <level>SEVERE</level>
+  <class>DirWalker_f</class>
+  <method>csvParser</method>
+  <thread>1</thread>
+  <message>6</message>
+</record>
+<record>
+  <date>2018-09-24T16:55:17</date>
+  <millis>1537818917542</millis>
+  <sequence>4</sequence>
+  <level>INFO</level>
+  <class>DirWalker_f</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Time taken to walk through and write - 12617 ms</message>
+</record>
+<record>
+  <date>2018-09-24T16:55:17</date>
+  <millis>1537818917543</millis>
+  <sequence>5</sequence>
+  <level>INFO</level>
+  <class>DirWalker_f</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>	Total Directories - 623</message>
+</record>
+<record>
+  <date>2018-09-24T16:55:17</date>
+  <millis>1537818917544</millis>
+  <sequence>6</sequence>
+  <level>INFO</level>
+  <class>DirWalker_f</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>	Total files read -13095</message>
+</record>
+<record>
+  <date>2018-09-24T16:55:17</date>
+  <millis>1537818917546</millis>
+  <sequence>7</sequence>
+  <level>INFO</level>
+  <class>DirWalker_f</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>	Total number of rows  282861</message>
+</record>
+<record>
+  <date>2018-09-24T16:55:17</date>
+  <millis>1537818917547</millis>
+  <sequence>8</sequence>
+  <level>INFO</level>
+  <class>DirWalker_f</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Valid Number of Rows Read  - 201040</message>
+</record>
+<record>
+  <date>2018-09-24T16:55:17</date>
+  <millis>1537818917548</millis>
+  <sequence>9</sequence>
+  <level>INFO</level>
+  <class>DirWalker_f</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message> Skipped Number of  Rows(exceptions and blank cells)- 81821</message>
+</record>
