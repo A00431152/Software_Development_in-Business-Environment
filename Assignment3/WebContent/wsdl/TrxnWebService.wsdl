@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.mcda5510.dpenny.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.mcda5510.dpenny.com" xmlns:intf="http://service.mcda5510.dpenny.com" xmlns:tns1="http://entity.mcda5510.dpenny.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.mcda5510.dpenny.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://entity.mcda5510.dpenny.com"/>
+   <element name="getTransaction">
+    <complexType>
+     <sequence>
+      <element name="trxnID" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTransactionResponse">
+    <complexType>
+     <sequence>
+      <element name="getTransactionReturn" type="tns1:Transaction"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateTransaction">
+    <complexType>
+     <sequence>
+      <element name="trxnID" type="xsd:int"/>
+      <element name="Name" type="xsd:string"/>
+      <element name="CardNumber" type="xsd:string"/>
+      <element name="unitPrice" type="xsd:double"/>
+      <element name="qty" type="xsd:int"/>
+      <element name="totalPrice" type="xsd:double"/>
+      <element name="expDate" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateTransactionResponse">
+    <complexType/>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://entity.mcda5510.dpenny.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Transaction">
+    <sequence>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="nameOnCard" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="updateTransactionResponse">
+
+      <wsdl:part element="impl:updateTransactionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTransactionRequest">
+
+      <wsdl:part element="impl:getTransaction" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTransactionResponse">
+
+      <wsdl:part element="impl:getTransactionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateTransactionRequest">
+
+      <wsdl:part element="impl:updateTransaction" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="TrxnWebService">
+
+      <wsdl:operation name="getTransaction">
+
+         <wsdl:input message="impl:getTransactionRequest" name="getTransactionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getTransactionResponse" name="getTransactionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateTransaction">
+
+         <wsdl:input message="impl:updateTransactionRequest" name="updateTransactionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateTransactionResponse" name="updateTransactionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="TrxnWebServiceSoapBinding" type="impl:TrxnWebService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getTransaction">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTransactionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTransactionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateTransaction">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateTransactionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateTransactionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="TrxnWebServiceService">
+
+      <wsdl:port binding="impl:TrxnWebServiceSoapBinding" name="TrxnWebService">
+
+         <wsdlsoap:address location="http://localhost:8080/Assignment3/services/TrxnWebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
