@@ -1,0 +1,52 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ServiceclassService WSDL service -->
+
+  <service name="Serviceclass" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.mcda5510.bshree.com"/>
+      <parameter name="wsdlServiceElement" value="ServiceclassService"/>
+      <parameter name="schemaQualified" value="http://service.mcda5510.bshree.com"/>
+      <parameter name="wsdlServicePort" value="Serviceclass"/>
+      <parameter name="className" value="com.bshree.mcda5510.service.ServiceclassSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Serviceclass"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getTrxns" qname="operNS:getTrxns" xmlns:operNS="http://service.mcda5510.bshree.com" returnQName="retNS:getTrxnsReturn" xmlns:retNS="http://service.mcda5510.bshree.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="deleteTrxns" qname="operNS:deleteTrxns" xmlns:operNS="http://service.mcda5510.bshree.com" returnQName="retNS:deleteTrxnsReturn" xmlns:retNS="http://service.mcda5510.bshree.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:ID" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="updateTrxns" qname="operNS:updateTrxns" xmlns:operNS="http://service.mcda5510.bshree.com" returnQName="retNS:updateTrxnsReturn" xmlns:retNS="http://service.mcda5510.bshree.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:Id" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:NameOnCard" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:Unitprice" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:Quantity" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:Totalprice" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:cardNumber" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ExpDate" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getoneTrxns" qname="operNS:getoneTrxns" xmlns:operNS="http://service.mcda5510.bshree.com" returnQName="retNS:getoneTrxnsReturn" xmlns:retNS="http://service.mcda5510.bshree.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:ID" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="insertTrxns" qname="operNS:insertTrxns" xmlns:operNS="http://service.mcda5510.bshree.com" returnQName="retNS:insertTrxnsReturn" xmlns:retNS="http://service.mcda5510.bshree.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:ID" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:nameOnCard" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:Unitprice" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:Quantity" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:TotalPrice" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:cardNumber" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ExpDate" xmlns:pns="http://service.mcda5510.bshree.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="updateTrxns getoneTrxns deleteTrxns insertTrxns getTrxns"/>
+
+  </service>
+</deployment>
